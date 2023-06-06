@@ -64,25 +64,21 @@ def shift(price_array, n):
     return result
 
 def Normal_Return(P_f, P_i):
-    result = (P_f - P_i)/P_i
-    return result
+    return (P_f - P_i)/P_i
 
 def Log_Return(P_f, P_i):
-    result = np.log(P_f/P_i)
-    return result
+    return np.log(P_f/P_i)
 
 # Tracking errors is the standard deviation of active return
 def Tracking_error(T, R_i, R_ave):
     a = 1/(T-1)
     b = np.sum((R_i - R_ave)**2)
-    result = (a*b)**(1/2)
-    return result
+    return (a*b)**(1/2)
 
 def mean_adjusted_tracking_error(T, active_return):
     a = 1/(T-1)
     b = np.sum(active_return**2)
-    result = (a*b)**(1/2)
-    return result
+    return (a*b)**(1/2)
 
 #%%
 # Calculate log return
@@ -191,8 +187,7 @@ def MATE_alter(T,R_p, R_b):
     a = 1/T
     active_return = R_p - R_b
     b = np.sum(active_return**2)
-    result = (a*b)**(1/2)
-    return result
+    return (a*b)**(1/2)
 # Compute MATE 
 MATE_XLB = MATE_alter(len(XLB),XLB_ret[~np.isnan(XLB_ret)], spy_ret[~np.isnan(spy_ret)]) 
 MATE_XLE = MATE_alter(len(XLE),XLE_ret[~np.isnan(XLE_ret)], spy_ret[~np.isnan(spy_ret)]) 

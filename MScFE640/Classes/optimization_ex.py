@@ -58,5 +58,5 @@ def equation(p):
     return (x+y**2-4, math.exp(x) + x*y - 3)
 
 x, y = fsolve(equation, (1,1))
-print("{},{}".format(x,y))
+print(f"{x},{y}")
 ##}

@@ -19,12 +19,11 @@ def fft(x):
     N = len(x)
     if N == 1:
         return x
-    else:
-        ek = fft(x[:-1:2])
-        ok = fft(x[1::2])
-        m = np.array(range(int(N/2)))
-        okm = ok*np.exp(-1j*2*np.pi*m/N)
-        return np.concatenate((ek+okm,ek-okm))
+    ek = fft(x[:-1:2])
+    ok = fft(x[1::2])
+    m = np.array(range(N // 2))
+    okm = ok*np.exp(-1j*2*np.pi*m/N)
+    return np.concatenate((ek+okm,ek-okm))
     
 def log_char(u):
     return np.exp(1j*u*(np.log(S0)+(r-sigma**2/2)*T)-sigma**2*T*u**2/2)

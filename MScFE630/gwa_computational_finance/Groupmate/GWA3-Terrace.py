@@ -139,10 +139,7 @@ plt.show()
 # %%
 # define the payoff of call option
 def payoff(price, K, L):
-    if price.any() >= L:
-        return 0
-    else:
-        return np.maximum(price[-1]-K, 0)
+    return 0 if price.any() >= L else np.maximum(price[-1]-K, 0)
 
 # calculate payoff for all price path
 def payoff_without_risk_adj(price_paths, K, L):

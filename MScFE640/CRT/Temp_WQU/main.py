@@ -2,8 +2,7 @@
 import numpy as np
 
 def arithmetic_mean(numpy_array):
-    result = sum(numpy_array) / np.count_nonzero(numpy_array) 
-    return result
+    return sum(numpy_array) / np.count_nonzero(numpy_array)
 
 def geometric_mean(numpy_array):
     

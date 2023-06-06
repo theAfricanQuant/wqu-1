@@ -90,11 +90,7 @@ exxon_80, exxon_20 = train_test_split(exxon, test_size=0.2)
 # %%
 # Create a new columns decide which direction the return go based on log return
 def decide_up_down(log_r):
-    if (log_r >0):
-        result = "1"
-    else:
-        result = "0"
-    return result
+    return "1" if (log_r >0) else "0"
 
 # Vectorize:
 v_decide_up_down = np.vectorize(decide_up_down)

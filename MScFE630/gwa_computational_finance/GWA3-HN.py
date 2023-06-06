@@ -36,8 +36,7 @@ rr = 0.25   # Recovery rate
 def analytical_price(S, K, r, v, T):
     d1 = (np.log(S/K)+(r+sigma**2/2)*T)/(sigma*np.sqrt(T))
     d2 = d1 - sigma*np.sqrt(T)
-    result = S * stats.norm.cdf(d1) - K * exp(-r*T)*stats.norm.cdf(d2)
-    return result
+    return S * stats.norm.cdf(d1) - K * exp(-r*T)*stats.norm.cdf(d2)
 
 # create European up-and-out option object
 print("Analytical price", analytical_price(S, K, r, sigma, T))
@@ -83,10 +82,10 @@ model_prices = bond_price_fun(opt_r,0,maturity,opt_alpha,opt_beta,opt_sigma)
 
 # print the results
 print('\nCalibrated values:')
-print('Interest rate = {}'.format(opt_r))
-print('Alpha = {}'.format(opt_alpha))
-print('Beta = {}'.format(opt_beta))
-print('Volatility = {}'.format(opt_sigma))
+print(f'Interest rate = {opt_r}')
+print(f'Alpha = {opt_alpha}')
+print(f'Beta = {opt_beta}')
+print(f'Volatility = {opt_sigma}')
 
 # Ploting result
 plt.xlabel("Maturity")
